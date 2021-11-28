@@ -5,5 +5,5 @@ module.exports = (app) => {
 
   router.get("/", lunchat.getAllStore);
 
-  app.use("/api/store", router);
+  app.use("/api/stores", router);
 };

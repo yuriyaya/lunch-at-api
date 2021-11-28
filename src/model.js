@@ -12,7 +12,7 @@ const LunchAt = function (store) {
 dbConn.open(db);
 
 LunchAt.getAllStore = (result) => {
-  db.query("SELECT * FROM store", (err, res) => {
+  db.query("SELECT * FROM stores", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
