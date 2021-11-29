@@ -84,4 +84,22 @@ LunchAt.removeStore = (id, result) => {
   });
 };
 
+LunchAt.findStoreById = (id, result) => {
+  db.query(`SELECT * FROM stores WHERE id = ${id}`, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+
+    if (res.length) {
+      console.log("found store: ", res[0]);
+      result(null, res[0]);
+      return;
+    }
+
+    result({ kind: "not_found" }, null);
+  });
+};
+
 module.exports = LunchAt;

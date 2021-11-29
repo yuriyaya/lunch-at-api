@@ -7,6 +7,8 @@ module.exports = (app) => {
 
   router.post("/", lunchat.addNewStore);
 
+  router.get("/:id", lunchat.findStoreById);
+
   router.put("/:id", lunchat.updateStoreById);
 
   router.delete("/:id", lunchat.removeStore);
