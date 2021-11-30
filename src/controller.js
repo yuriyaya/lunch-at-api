@@ -106,3 +106,57 @@ exports.findStore = (req, res) => {
     } else res.send(data);
   });
 };
+
+exports.getAllStoreMenu = (req, res) => {
+  LunchAt.getAllStoreMenu(req.params.id, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving stores.",
+      });
+    else res.send(data);
+  });
+};
+
+exports.addStoreNewMenu = (req, res) => {
+  if (!req.body) {
+    res.status(400).send({
+      message: "Content can not be empty!",
+    });
+  }
+
+  const menu = {
+    store_id: req.params.id,
+    name: req.body.name,
+  };
+
+  LunchAt.addStoreNewMenu(menu, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while adding the store.",
+      });
+    else res.send(data);
+  });
+};
+
+exports.updateStoreMenuById = (req, res) => {
+  // Validate Request
+  if (!req.body) {
+    res.status(400).send({
+      message: "Content can not be empty!",
+    });
+  }
+
+  LunchAt.updateStoreMenuById(req.params.id2, req.body, (err, data) => {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: `Not found menu with id ${req.params.id2}.`,
+        });
+      } else {
+        res.status(500).send({
+          message: "Error updating menu with id " + req.params.id2,
+        });
+      }
+    } else res.send(data);
+  });
+};

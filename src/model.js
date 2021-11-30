@@ -149,4 +149,53 @@ LunchAt.findStore = (keyword, result) => {
   });
 };
 
+LunchAt.getAllStoreMenu = (id, result) => {
+  db.query(`SELECT * FROM menus WHERE store_id=${id}`, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+
+    console.log("stores: ", res);
+    result(null, res);
+  });
+};
+
+LunchAt.addStoreNewMenu = (newMenu, result) => {
+  console.log(newMenu);
+  db.query("INSERT INTO menus SET ?", newMenu, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+
+    console.log("added menu: ", { id: res.insertId, ...newMenu });
+    result(null, { id: res.insertId, ...newMenu });
+  });
+};
+
+LunchAt.updateStoreMenuById = (id2, req_menu, result) => {
+  db.query(
+    "UPDATE menus SET store_id = ?, name = ?  WHERE id = ?",
+    [req_menu.store_id, req_menu.name, id2],
+    (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+        return;
+      }
+
+      if (res.affectedRows == 0) {
+        result({ kind: "not_found" }, null);
+        return;
+      }
+
+      console.log("updated menu: ", { id: id2, ...req_menu });
+      result(null, { id: id2, ...req_menu });
+    }
+  );
+};
+
 module.exports = LunchAt;
