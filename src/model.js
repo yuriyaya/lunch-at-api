@@ -102,4 +102,51 @@ LunchAt.findStoreById = (id, result) => {
   });
 };
 
+LunchAt.findStore = (keyword, result) => {
+  let sql = "SELECT * from stores ";
+  if (keyword["name"]) {
+    //name search
+    const existingParams = ["name"].filter((field) => keyword[field]);
+    if (existingParams.length) {
+      sql += " WHERE ";
+      sql += existingParams
+        .map((field) => `${field} LIKE "%${keyword[field]}%"`)
+        .join(" AND ");
+    }
+  } else {
+    //category & distance search
+    const existingParams = ["category", "distance"].filter(
+      (field) => keyword[field]
+    );
+    if (existingParams.length) {
+      sql += " WHERE ";
+      sql += existingParams
+        .map((field) => {
+          if (field === "category") {
+            return `${field} = "${keyword[field]}"`;
+          } else {
+            return `${field} <= ${keyword[field]}`;
+          }
+        })
+        .join(" AND ");
+    }
+  }
+
+  db.query(sql, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+
+    if (res.length) {
+      console.log("found store: ", res);
+      result(null, res);
+      return;
+    }
+
+    result({ kind: "not_found" }, null);
+  });
+};
+
 module.exports = LunchAt;

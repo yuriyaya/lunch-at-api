@@ -4,13 +4,10 @@ module.exports = (app) => {
   var router = require("express").Router();
 
   router.get("/", lunchat.getAllStore);
-
   router.post("/", lunchat.addNewStore);
-
+  router.get("/search", lunchat.findStore);
   router.get("/:id", lunchat.findStoreById);
-
   router.put("/:id", lunchat.updateStoreById);
-
   router.delete("/:id", lunchat.removeStore);
 
   app.use("/api/stores", router);

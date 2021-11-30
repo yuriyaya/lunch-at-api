@@ -90,3 +90,19 @@ exports.findStoreById = (req, res) => {
     } else res.send(data);
   });
 };
+
+exports.findStore = (req, res) => {
+  LunchAt.findStore(req.query, (err, data) => {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: `Not found store with ${req.query[0]}.`,
+        });
+      } else {
+        res.status(500).send({
+          message: "Error retrieving store with name " + req.query[0],
+        });
+      }
+    } else res.send(data);
+  });
+};
