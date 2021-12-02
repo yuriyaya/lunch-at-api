@@ -186,3 +186,19 @@ exports.removeStoreMenu = (req, res) => {
     } else res.send({ message: `store was deleted successfully!` });
   });
 };
+
+exports.findMenu = (req, res) => {
+  LunchAt.findMenu(req.query, (err, data) => {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: `Not found store with ${req.query[0]}.`,
+        });
+      } else {
+        res.status(500).send({
+          message: "Error retrieving store with name " + req.query[0],
+        });
+      }
+    } else res.send(data);
+  });
+};

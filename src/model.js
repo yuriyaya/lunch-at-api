@@ -232,4 +232,34 @@ LunchAt.removeStoreMenu = (id2, result) => {
   });
 };
 
+LunchAt.findMenu = (keyword, result) => {
+  let sql = "SELECT * from menus ";
+  if (keyword["name"]) {
+    //name search
+    const existingParams = ["name"].filter((field) => keyword[field]);
+    if (existingParams.length) {
+      sql += " WHERE ";
+      sql += existingParams
+        .map((field) => `${field} LIKE "%${keyword[field]}%"`)
+        .join(" AND ");
+    }
+  }
+
+  db.query(sql, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+
+    if (res.length) {
+      console.log("found menu: ", res);
+      result(null, res);
+      return;
+    }
+
+    result({ kind: "not_found" }, null);
+  });
+};
+
 module.exports = LunchAt;
