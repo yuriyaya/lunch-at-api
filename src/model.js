@@ -157,7 +157,7 @@ LunchAt.getAllStoreMenu = (id, result) => {
       return;
     }
 
-    console.log("stores: ", res);
+    console.log("menus: ", res);
     result(null, res);
   });
 };
@@ -196,6 +196,40 @@ LunchAt.updateStoreMenuById = (id2, req_menu, result) => {
       result(null, { id: id2, ...req_menu });
     }
   );
+};
+
+LunchAt.getStoreMenuById = (id, id2, result) => {
+  db.query(
+    `SELECT * FROM menus WHERE store_id=${id} AND id=${id2}`,
+    (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+        return;
+      }
+
+      console.log("menus: ", res);
+      result(null, res);
+    }
+  );
+};
+
+LunchAt.removeStoreMenu = (id2, result) => {
+  db.query("DELETE FROM menus WHERE id = ?", id2, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+
+    if (res.affectedRows == 0) {
+      result({ kind: "not_found" }, null);
+      return;
+    }
+
+    console.log("deleted menus with id: ", id);
+    result(null, res);
+  });
 };
 
 module.exports = LunchAt;

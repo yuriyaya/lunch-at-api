@@ -14,7 +14,9 @@ module.exports = (app) => {
   //menus
   router.get("/:id/menus", lunchat.getAllStoreMenu);
   router.post("/:id/menus", lunchat.addStoreNewMenu);
+  router.get("/:id/menus/:id2", lunchat.getStoreMenuById);
   router.put("/:id/menus/:id2", lunchat.updateStoreMenuById);
+  router.delete("/:id/menus/:id2", lunchat.removeStoreMenu);
 
   app.use("/api/stores", router);
 };
