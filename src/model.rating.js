@@ -50,5 +50,30 @@ Ratings.removeStoreRating = (id, result) => {
     result(null, res);
   });
 };
+4;
+
+Ratings.findStoreRating = (keyword, result) => {
+  let sql =
+    "SELECT store_id, AVG(rating) AS avg_rating FROM store_ratings GROUP BY store_id HAVING avg_rating >=";
+  if (keyword["rating"]) {
+    sql += `${keyword["rating"]}`;
+  }
+  console.log(sql);
+  db.query(sql, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+
+    if (res.length) {
+      console.log("found store: ", res);
+      result(null, res);
+      return;
+    }
+
+    result({ kind: "not_found" }, null);
+  });
+};
 
 module.exports = Ratings;
