@@ -1,15 +1,8 @@
 const dbConn = require("../conf/db");
 const db = dbConn.init();
-
-const LunchAt = function (store) {
-  this.name = store.name;
-  this.category = store.category;
-  this.loc_quick = store.loc_quick;
-  this.link = store.link;
-  this.distance = store.distance;
-};
-
 dbConn.open(db);
+
+const LunchAt = function () {};
 
 LunchAt.getAllStore = (result) => {
   db.query("SELECT * FROM stores", (err, res) => {

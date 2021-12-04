@@ -17,13 +17,13 @@ exports.addNewStore = (req, res) => {
     });
   }
 
-  const store = new LunchAt({
+  const store = {
     name: req.body.name,
     category: req.body.category,
     loc_quick: req.body.loc_quick,
     link: req.body.link,
     distance: req.body.distance,
-  });
+  };
 
   LunchAt.addNewStore(store, (err, data) => {
     if (err)

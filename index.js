@@ -16,4 +16,5 @@ app.get("/api/test", (req, res) => {
 });
 
 require("./src/route.js")(app);
+require("./src/route.rating")(app);
 app.listen(3000, () => console.log("server running"));
