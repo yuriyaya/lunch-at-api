@@ -8,6 +8,7 @@ const dbConnection = {
       user: process.env.user,
       password: process.env.password,
       database: process.env.database,
+      dateStrings: "date",
     });
   },
   open: function (con) {
