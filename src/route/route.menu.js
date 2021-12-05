@@ -13,11 +13,11 @@ module.exports = (app) => {
   // GET    /api/store/:id_store/menulist   - id_store의 식당 메뉴 목록 - UI용
 
   routerMenu.get("/store/:id_store/menus", menu.getAllStoreMenu);
-  routerMenu.post("/store/:id_store/menus", menu.addStoreNewMenu);
-  routerMenu.get("/menu/:id_menu", menu.getMenuById);
-  routerMenu.put("/menu/:id_menu", menu.updateMenuById);
-  routerMenu.delete("/menu/:id_menu", menu.deleteMenu);
-  routerMenu.get("/menus/search", menu.findMenu);
+  // routerMenu.post("/store/:id_store/menus", menu.addStoreNewMenu);
+  // routerMenu.get("/menu/:id_menu", menu.getMenuById);
+  // routerMenu.put("/menu/:id_menu", menu.updateMenuById);
+  // routerMenu.delete("/menu/:id_menu", menu.deleteMenu);
+  // routerMenu.get("/menus/search", menu.findMenu);
 
   app.use("/api", routerMenu);
 };
