@@ -15,6 +15,8 @@ app.get("/api/test", (req, res) => {
   res.json({ name: "test API", version: "0.1.211128" });
 });
 
-require("./src/route.js")(app);
-require("./src/route.rating")(app);
+require("./src/route/route.store.js")(app);
+require("./src/route/route.menu")(app);
+require("./src/route/route.storerating")(app);
+require("./src/route/route.menurating")(app);
 app.listen(3000, () => console.log("server running"));
