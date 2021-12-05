@@ -58,8 +58,6 @@ exports.updateStoreById = (req, res) => {
     });
   }
 
-  console.log(req.body);
-
   Store.updateStoreById(req.params.id_store, req.body, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {

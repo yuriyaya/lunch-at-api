@@ -1,4 +1,5 @@
 const mysql = require("mysql");
+const utilFunc = require("../src/utils");
 
 const dbConnection = {
   init: function () {
@@ -14,18 +15,18 @@ const dbConnection = {
   open: function (con) {
     con.connect((err) => {
       if (err) {
-        console.log("MySQL connection fail : ", err);
+        utilFunc.printLog("MySQL connection fail : " + err);
       } else {
-        console.log("MySQL Connected!!!");
+        utilFunc.printLog("MySQL Connected!!!");
       }
     });
   },
   close: function (con) {
     con.end((err) => {
       if (err) {
-        console.log("MySQL close fail : ", err);
+        utilFunc.printLog("MySQL close fail : " + err);
       } else {
-        console.log("MySQL Terminated...");
+        utilFunc.printLog("MySQL Terminated...");
       }
     });
   },

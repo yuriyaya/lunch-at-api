@@ -1,3 +1,4 @@
+const utilFunc = require("../utils");
 const dbConn = require("../../conf/db");
 const db = dbConn.init();
 dbConn.open(db);
@@ -9,12 +10,12 @@ StoreRatings.getAllStoreRatings = (id, result) => {
     `SELECT * FROM store_ratings WHERE store_id=${id} ORDER BY datetime DESC`,
     (err, res) => {
       if (err) {
-        console.log("error: ", err);
+        utilFunc.printLog("error: " + err);
         result(null, err);
         return;
       }
 
-      console.log("store ratings: ", res);
+      utilFunc.printLog("store ratings: " + res);
       result(null, res);
     }
   );
@@ -23,12 +24,14 @@ StoreRatings.getAllStoreRatings = (id, result) => {
 StoreRatings.addStoreNewRating = (newStoreRating, result) => {
   db.query("INSERT INTO store_ratings SET ?", newStoreRating, (err, res) => {
     if (err) {
-      console.log("error: ", err);
+      utilFunc.printLog("error: " + err);
       result(err, null);
       return;
     }
 
-    console.log("added store: ", { id: res.insertId, ...newStoreRating });
+    utilFunc.printLog(
+      "added store: " + { id: res.insertId, ...newStoreRating }
+    );
     result(null, { id: res.insertId, ...newStoreRating });
   });
 };
@@ -36,7 +39,7 @@ StoreRatings.addStoreNewRating = (newStoreRating, result) => {
 StoreRatings.deleteStoreRating = (id_srating, result) => {
   db.query("DELETE FROM store_ratings WHERE id = ?", id_srating, (err, res) => {
     if (err) {
-      console.log("error: ", err);
+      utilFunc.printLog("error: " + err);
       result(null, err);
       return;
     }
@@ -46,7 +49,7 @@ StoreRatings.deleteStoreRating = (id_srating, result) => {
       return;
     }
 
-    console.log("deleted store_ratings with id: ", id_srating);
+    utilFunc.printLog("deleted store_ratings with id: " + id_srating);
     result(null, res);
   });
 };
@@ -58,16 +61,15 @@ StoreRatings.searchStoreRating = (keyword, result) => {
   if (keyword["ratings"]) {
     sql += `${keyword["ratings"]}`;
   }
-  console.log(sql);
   db.query(sql, (err, res) => {
     if (err) {
-      console.log("error: ", err);
+      utilFunc.printLog("error: " + err);
       result(err, null);
       return;
     }
 
     if (res.length) {
-      console.log("found store: ", res);
+      utilFunc.printLog("found store_ratings: " + res);
       result(null, res);
       return;
     }

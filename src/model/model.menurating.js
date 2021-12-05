@@ -1,3 +1,4 @@
+const utilFunc = require("../utils");
 const dbConn = require("../../conf/db");
 const db = dbConn.init();
 dbConn.open(db);
@@ -9,12 +10,12 @@ MenuRatings.getAllMenuRatings = (id, result) => {
     `SELECT * FROM menu_ratings WHERE menu_id=${id} ORDER BY datetime DESC`,
     (err, res) => {
       if (err) {
-        console.log("error: ", err);
+        utilFunc.printLog("error: " + err);
         result(null, err);
         return;
       }
 
-      console.log("menu ratings: ", res);
+      utilFunc.printLog("menu ratings: " + res);
       result(null, res);
     }
   );
@@ -23,12 +24,14 @@ MenuRatings.getAllMenuRatings = (id, result) => {
 MenuRatings.addMenuRating = (newRating, result) => {
   db.query("INSERT INTO menu_ratings SET ?", newRating, (err, res) => {
     if (err) {
-      console.log("error: ", err);
+      utilFunc.printLog("error: " + err);
       result(err, null);
       return;
     }
 
-    console.log("added store: ", { id: res.insertId, ...newRating });
+    utilFunc.printLog(
+      "added menu_ratings: " + { id: res.insertId, ...newRating }
+    );
     result(null, { id: res.insertId, ...newRating });
   });
 };
@@ -36,7 +39,7 @@ MenuRatings.addMenuRating = (newRating, result) => {
 MenuRatings.deleteMenuRating = (id, result) => {
   db.query("DELETE FROM menu_ratings WHERE id = ?", id, (err, res) => {
     if (err) {
-      console.log("error: ", err);
+      utilFunc.printLog("error: " + err);
       result(null, err);
       return;
     }
@@ -46,7 +49,7 @@ MenuRatings.deleteMenuRating = (id, result) => {
       return;
     }
 
-    console.log("deleted store_ratings with id: ", id);
+    utilFunc.printLog("deleted menu_ratings with id: " + id);
     result(null, res);
   });
 };
@@ -60,13 +63,13 @@ MenuRatings.searchMenuRating = (keyword, result) => {
   }
   db.query(sql, (err, res) => {
     if (err) {
-      console.log("error: ", err);
+      utilFunc.printLog("error: " + err);
       result(err, null);
       return;
     }
 
     if (res.length) {
-      console.log("found menu: ", res);
+      utilFunc.printLog("found menu_ratings: " + res);
       result(null, res);
       return;
     }

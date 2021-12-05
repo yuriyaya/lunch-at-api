@@ -1,3 +1,4 @@
+const utilFunc = require("../utils");
 const dbConn = require("../../conf/db");
 const db = dbConn.init();
 dbConn.open(db);
@@ -7,12 +8,12 @@ const Store = function () {};
 Store.getAllStore = (result) => {
   db.query("SELECT * FROM stores", (err, res) => {
     if (err) {
-      console.log("error: ", err);
+      utilFunc.printLog("error: " + err);
       result(null, err);
       return;
     }
 
-    console.log("stores: ", res);
+    utilFunc.printLog("stores: " + res);
     result(null, res);
   });
 };
@@ -20,12 +21,12 @@ Store.getAllStore = (result) => {
 Store.addNewStore = (newStore, result) => {
   db.query("INSERT INTO stores SET ?", newStore, (err, res) => {
     if (err) {
-      console.log("error: ", err);
+      utilFunc.printLog("error: " + err);
       result(err, null);
       return;
     }
 
-    console.log("added store: ", { id: res.insertId, ...newStore });
+    utilFunc.printLog("added store: " + { id: res.insertId, ...newStore });
     result(null, { id: res.insertId, ...newStore });
   });
 };
@@ -33,13 +34,13 @@ Store.addNewStore = (newStore, result) => {
 Store.getStoreById = (id, result) => {
   db.query(`SELECT * FROM stores WHERE id = ${id}`, (err, res) => {
     if (err) {
-      console.log("error: ", err);
+      utilFunc.printLog("error: " + err);
       result(err, null);
       return;
     }
 
     if (res.length) {
-      console.log("found store: ", res[0]);
+      utilFunc.printLog("found store: " + res[0]);
       result(null, res[0]);
       return;
     }
@@ -61,7 +62,7 @@ Store.updateStoreById = (id, store, result) => {
     ],
     (err, res) => {
       if (err) {
-        console.log("error: ", err);
+        utilFunc.printLog("error: " + err);
         result(null, err);
         return;
       }
@@ -71,7 +72,7 @@ Store.updateStoreById = (id, store, result) => {
         return;
       }
 
-      console.log("updated store: ", { id: id, ...store });
+      utilFunc.printLog("updated store: " + { id: id, ...store });
       result(null, { id: id, ...store });
     }
   );
@@ -80,7 +81,7 @@ Store.updateStoreById = (id, store, result) => {
 Store.deleteStore = (id, result) => {
   db.query("DELETE FROM stores WHERE id = ?", id, (err, res) => {
     if (err) {
-      console.log("error: ", err);
+      utilFunc.printLog("error: " + err);
       result(null, err);
       return;
     }
@@ -90,7 +91,7 @@ Store.deleteStore = (id, result) => {
       return;
     }
 
-    console.log("deleted store with id: ", id);
+    utilFunc.printLog("deleted store with id: " + id);
     result(null, res);
   });
 };
@@ -127,13 +128,13 @@ Store.searchStore = (keyword, result) => {
 
   db.query(sql, (err, res) => {
     if (err) {
-      console.log("error: ", err);
+      utilFunc.printLog("error: " + err);
       result(err, null);
       return;
     }
 
     if (res.length) {
-      console.log("found store: ", res);
+      utilFunc.printLog("found store: " + res);
       result(null, res);
       return;
     }
