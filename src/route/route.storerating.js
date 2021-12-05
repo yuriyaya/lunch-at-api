@@ -13,15 +13,15 @@ module.exports = (app) => {
     "/store/:id_store/store_ratings",
     storeRating.getAllStoreRatings
   );
-  routerStoreRating.post(
-    "/store/:id_store/store_ratings",
-    storeRating.addStoreNewRating
-  );
-  routerStoreRating.delete(
-    "/store_rating/:id_srating",
-    storeRating.deleteStoreRating
-  );
-  routerStoreRating.get("/store_ratings/search", storeRating.searchStoreRating);
+  // routerStoreRating.post(
+  //   "/store/:id_store/store_ratings",
+  //   storeRating.addStoreNewRating
+  // );
+  // routerStoreRating.delete(
+  //   "/store_rating/:id_srating",
+  //   storeRating.deleteStoreRating
+  // );
+  // routerStoreRating.get("/store_ratings/search", storeRating.searchStoreRating);
 
   app.use("/api", routerStoreRating);
 };
