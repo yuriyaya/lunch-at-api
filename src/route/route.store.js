@@ -15,11 +15,11 @@ module.exports = (app) => {
   // GET      /api/stores/categorylist    카테고리 목록 - UI용
 
   storeRouter.get("/stores", store.getAllStore);
-  // storeRouter.post("/stores", store.addNewStore);
+  storeRouter.post("/stores", store.addNewStore);
   storeRouter.get("/store/:id_store", store.getStoreById);
-  // storeRouter.put("/store/:id_store", store.updateStoreById);
-  // storeRouter.delete("/store/:id_store", store.deleteStore);
-  // storeRouter.get("/stores/search", store.searchStore);
+  storeRouter.put("/store/:id_store", store.updateStoreById);
+  storeRouter.delete("/store/:id_store", store.deleteStore);
+  storeRouter.get("/stores/search", store.searchStore);
 
   app.use("/api", storeRouter);
 };

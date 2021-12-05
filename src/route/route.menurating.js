@@ -13,15 +13,15 @@ module.exports = (app) => {
     "/menu/:id_menu/menu_ratings",
     menuRating.getAllMenuRatings
   );
-  // menuRatingRouter.post(
-  //   "/menu/:id_menu/menu_ratings",
-  //   menuRating.addMenuRating
-  // );
-  // menuRatingRouter.delete(
-  //   "/menu_rating/:id_mrate",
-  //   menuRating.deleteMenuRating
-  // );
-  // menuRatingRouter.get("/menu_ratings/search", menuRating.searchMenuRating);
+  menuRatingRouter.post(
+    "/menu/:id_menu/menu_ratings",
+    menuRating.addMenuRating
+  );
+  menuRatingRouter.delete(
+    "/menu_rating/:id_mrate",
+    menuRating.deleteMenuRating
+  );
+  menuRatingRouter.get("/menu_ratings/search", menuRating.searchMenuRating);
 
   app.use("/api", menuRatingRouter);
 };
