@@ -3,3 +3,5 @@ package.json
 /node_modules
 .env
 .vscode/settings.json
+conf/sql/lunch-at.sql
+testcases/lunch-at-test.json
