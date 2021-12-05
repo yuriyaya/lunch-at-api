@@ -32,18 +32,18 @@ Menu.getAllStoreMenu = (id, result) => {
 //   });
 // };
 
-// Menu.getMenuById = (id_menu, result) => {
-//   db.query(`SELECT * FROM menus WHERE id=${id_menu}`, (err, res) => {
-//     if (err) {
-//       utilFunc.printLog("error: " + err);
-//       result(null, err);
-//       return;
-//     }
+Menu.getMenuById = (id_menu, result) => {
+  dbPool.query(`SELECT * FROM menus WHERE id=${id_menu}`, (err, res) => {
+    if (err) {
+      utilFunc.printLog("error: " + err);
+      result(null, err);
+      return;
+    }
 
-//     utilFunc.printLog("menus: " + res);
-//     result(null, res);
-//   });
-// };
+    utilFunc.printLog("menus: " + res);
+    result(null, res);
+  });
+};
 
 // Menu.updateMenuById = (id_menu, req_menu, result) => {
 //   db.query(

@@ -14,7 +14,7 @@ module.exports = (app) => {
 
   routerMenu.get("/store/:id_store/menus", menu.getAllStoreMenu);
   // routerMenu.post("/store/:id_store/menus", menu.addStoreNewMenu);
-  // routerMenu.get("/menu/:id_menu", menu.getMenuById);
+  routerMenu.get("/menu/:id_menu", menu.getMenuById);
   // routerMenu.put("/menu/:id_menu", menu.updateMenuById);
   // routerMenu.delete("/menu/:id_menu", menu.deleteMenu);
   // routerMenu.get("/menus/search", menu.findMenu);

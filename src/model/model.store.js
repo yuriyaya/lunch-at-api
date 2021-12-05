@@ -31,23 +31,23 @@ Store.getAllStore = (result) => {
 //   });
 // };
 
-// Store.getStoreById = (id, result) => {
-//   db.query(`SELECT * FROM stores WHERE id = ${id}`, (err, res) => {
-//     if (err) {
-//       utilFunc.printLog("error: " + err);
-//       result(err, null);
-//       return;
-//     }
+Store.getStoreById = (id, result) => {
+  dbPool.query(`SELECT * FROM stores WHERE id = ${id}`, (err, res) => {
+    if (err) {
+      utilFunc.printLog("error: " + err);
+      result(err, null);
+      return;
+    }
 
-//     if (res.length) {
-//       utilFunc.printLog("found store: " + res[0]);
-//       result(null, res[0]);
-//       return;
-//     }
+    if (res.length) {
+      utilFunc.printLog("found store: " + res[0]);
+      result(null, res[0]);
+      return;
+    }
 
-//     result({ kind: "not_found" }, null);
-//   });
-// };
+    result({ kind: "not_found" }, null);
+  });
+};
 
 // Store.updateStoreById = (id, store, result) => {
 //   db.query(
