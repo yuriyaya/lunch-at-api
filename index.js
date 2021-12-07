@@ -2,9 +2,11 @@ const express = require("express");
 const dotenv = require("dotenv").config();
 
 const app = express();
+const cors = require("cors");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.get("/api", (req, res) => {
   res.send("lunch-at service REST API back-end");
