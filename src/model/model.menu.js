@@ -114,4 +114,20 @@ Menu.findMenu = (keyword, result) => {
   });
 };
 
+Menu.getStoreAllMenu = (id, result) => {
+  dbPool.query(
+    `SELECT DISTINCT name FROM menus WHERE store_id=${id} ORDER BY name ASC`,
+    (err, res) => {
+      if (err) {
+        utilFunc.printLog("error: " + err);
+        result(null, err);
+        return;
+      }
+
+      utilFunc.printLog("menus: " + res);
+      result(null, res);
+    }
+  );
+};
+
 module.exports = Menu;
