@@ -107,3 +107,23 @@ exports.searchStore = (req, res) => {
     } else res.send(data);
   });
 };
+
+exports.getAllStoreNameList = (req, res) => {
+  Store.getAllStoreNameList((err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving stores.",
+      });
+    else res.send(data);
+  });
+};
+
+exports.getAllStoreCategoryList = (req, res) => {
+  Store.getAllStoreCategoryList((err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving stores.",
+      });
+    else res.send(data);
+  });
+};

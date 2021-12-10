@@ -20,6 +20,8 @@ module.exports = (app) => {
   storeRouter.put("/store/:id_store", store.updateStoreById);
   storeRouter.delete("/store/:id_store", store.deleteStore);
   storeRouter.get("/stores/search", store.searchStore);
+  storeRouter.get("/stores/namelist", store.getAllStoreNameList);
+  storeRouter.get("/stores/categorylist", store.getAllStoreCategoryList);
 
   app.use("/api", storeRouter);
 };

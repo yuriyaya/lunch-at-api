@@ -142,4 +142,36 @@ Store.searchStore = (keyword, result) => {
   });
 };
 
+Store.getAllStoreNameList = (result) => {
+  dbPool.query(
+    "SELECT DISTINCT name from stores ORDER BY name ASC",
+    (err, res) => {
+      if (err) {
+        utilFunc.printLog("error: " + err);
+        result(null, err);
+        return;
+      }
+
+      utilFunc.printLog("stores: " + res);
+      result(null, res);
+    }
+  );
+};
+
+Store.getAllStoreCategoryList = (result) => {
+  dbPool.query(
+    "SELECT DISTINCT category from stores ORDER BY category ASC",
+    (err, res) => {
+      if (err) {
+        utilFunc.printLog("error: " + err);
+        result(null, err);
+        return;
+      }
+
+      utilFunc.printLog("stores: " + res);
+      result(null, res);
+    }
+  );
+};
+
 module.exports = Store;
