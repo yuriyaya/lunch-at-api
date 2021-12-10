@@ -1510,7 +1510,7 @@
                     "comparison": "Equals",
                     "subject": "ResponseBody",
                     "path": "content",
-                    "value": "[{\"id\":1,\"name\":\"김치찌개\",\"mid\":1},{\"id\":1,\"name\":\"순두부찌개\",\"mid\":2},{\"id\":2,\"name\":\"초밥\",\"mid\":3}]"
+                    "value": "[{\"id\":1,\"name\":\"식당1\",\"mid\":1,\"mname\":\"김치찌개\"},{\"id\":1,\"name\":\"식당1\",\"mid\":2,\"mname\":\"순두부찌개\"},{\"id\":2,\"name\":\"식당3\",\"mid\":3,\"mname\":\"초밥\"}]"
                   }
                 ]
               }
