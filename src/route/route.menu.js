@@ -11,6 +11,7 @@ module.exports = (app) => {
   // DELETE /api/menu/:id_menu              - id_menu 메뉴 삭제
   // GET    /api/menus/search?name=x        - 메뉴 이름으로 검색(전체 식당)
   // GET    /api/store/:id_store/menulist   - id_store의 식당 메뉴 목록 - UI용
+  // GET    /api/menus/menustorelist        - 전체 메뉴-식당 목록 - UI용
 
   routerMenu.get("/store/:id_store/menus", menu.getAllStoreMenu);
   routerMenu.post("/store/:id_store/menus", menu.addStoreNewMenu);
@@ -19,6 +20,7 @@ module.exports = (app) => {
   routerMenu.put("/menu/:id_menu", menu.updateMenuById);
   routerMenu.delete("/menu/:id_menu", menu.deleteMenu);
   routerMenu.get("/menus/search", menu.findMenu);
+  routerMenu.get("/menus/menustorelist", menu.getAllMenuStore);
 
   app.use("/api", routerMenu);
 };

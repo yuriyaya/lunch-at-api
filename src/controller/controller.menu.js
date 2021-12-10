@@ -100,7 +100,20 @@ exports.getStoreAllMenu = (req, res) => {
   Menu.getStoreAllMenu(req.params.id_store, (err, data) => {
     if (err)
       res.status(500).send({
-        message: err.message || "Some error occurred while retrieving stores.",
+        message:
+          err.message ||
+          "Some error occurred while retrieving store's all menu.",
+      });
+    else res.send(data);
+  });
+};
+
+exports.getAllMenuStore = (req, res) => {
+  Menu.getAllMenuStore((err, data) => {
+    if (err)
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving menu-store.",
       });
     else res.send(data);
   });

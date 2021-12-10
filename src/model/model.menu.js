@@ -130,4 +130,20 @@ Menu.getStoreAllMenu = (id, result) => {
   );
 };
 
+Menu.getAllMenuStore = (result) => {
+  dbPool.query(
+    `SELECT stores.id, stores.name, menus.id as mid, menus.name FROM stores RIGHT OUTER JOIN menus ON stores.id = menus.store_id ORDER BY menus.name ASC`,
+    (err, res) => {
+      if (err) {
+        utilFunc.printLog("error: " + err);
+        result(null, err);
+        return;
+      }
+
+      utilFunc.printLog("menus-stores: " + res);
+      result(null, res);
+    }
+  );
+};
+
 module.exports = Menu;
