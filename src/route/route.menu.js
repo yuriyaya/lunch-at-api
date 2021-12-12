@@ -12,6 +12,7 @@ module.exports = (app) => {
   // GET    /api/menus/search?name=x        - 메뉴 이름으로 검색(전체 식당)
   // GET    /api/store/:id_store/menulist   - id_store의 식당 메뉴 목록 - UI용
   // GET    /api/menus/menustorelist        - 전체 메뉴-식당 목록 - UI용
+  // GET    /api/menus/menuratinglist       - 메뉴 평균/최대/최소 평점, 평점갯수 리스트, 해당 메뉴 식당 정보
 
   routerMenu.get("/store/:id_store/menus", menu.getAllStoreMenu);
   routerMenu.post("/store/:id_store/menus", menu.addStoreNewMenu);
@@ -21,6 +22,7 @@ module.exports = (app) => {
   routerMenu.delete("/menu/:id_menu", menu.deleteMenu);
   routerMenu.get("/menus/search", menu.findMenu);
   routerMenu.get("/menus/menustorelist", menu.getAllMenuStore);
+  routerMenu.get("/menus/menuratinglist", menu.getAllMenuRatingList);
 
   app.use("/api", routerMenu);
 };

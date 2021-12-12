@@ -176,7 +176,7 @@ Store.getAllStoreCategoryList = (result) => {
 
 Store.getAllStoreRatingList = (result) => {
   dbPool.query(
-    "select * from stores left join (select store_ratings.store_id, avg(store_ratings.rating) as avg_rate, max(store_ratings.rating) as max_rate, min(store_ratings.rating) as min_rate from store_ratings GROUP BY store_ratings.store_id) as r on stores.id=r.store_id",
+    "SELECT * FROM stores LEFT JOIN (SELECT store_ratings.store_id, AVG(store_ratings.rating) AS avg_rate, MAX(store_ratings.rating) AS max_rate, MIN(store_ratings.rating) AS min_rate, COUNT(store_ratings.rating) as rate_cnt FROM store_ratings GROUP BY store_ratings.store_id) AS r ON stores.id=r.store_id",
     (err, res) => {
       if (err) {
         utilFunc.printLog("error: " + err);
