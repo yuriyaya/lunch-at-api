@@ -2043,6 +2043,52 @@
                   }
                 ]
               }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "${host}",
+                  "path": "/api/stores/storeratinglist"
+                },
+                "id": "6542a471-ec73-42b4-8145-8bd9294457e4",
+                "name": "400 GET store rating list",
+                "headers": [],
+                "assertions": [
+                  {
+                    "comparison": "Equals",
+                    "subject": "ResponseStatus",
+                    "path": "code",
+                    "value": "200"
+                  },
+                  {
+                    "comparison": "Equals",
+                    "subject": "ResponseBody",
+                    "path": "content",
+                    "value": "[{\"store_id\":1,\"avg_rating\":4},{\"store_id\":2,\"avg_rating\":2}]"
+                  }
+                ]
+              }
             }
           ]
         },
