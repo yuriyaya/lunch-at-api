@@ -174,4 +174,20 @@ Store.getAllStoreCategoryList = (result) => {
   );
 };
 
+Store.getAllStoreRatingList = (result) => {
+  dbPool.query(
+    "select * from stores left join (select store_ratings.store_id, avg(store_ratings.rating) as avg_rate, max(store_ratings.rating) as max_rate, min(store_ratings.rating) as min_rate from store_ratings GROUP BY store_ratings.store_id) as r on stores.id=r.store_id",
+    (err, res) => {
+      if (err) {
+        utilFunc.printLog("error: " + err);
+        result(null, err);
+        return;
+      }
+
+      utilFunc.printLog("stores: " + res);
+      result(null, res);
+    }
+  );
+};
+
 module.exports = Store;

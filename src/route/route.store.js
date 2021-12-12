@@ -13,6 +13,7 @@ module.exports = (app) => {
   // GET      /api/stores/search?category=x&distance=x  식당 카테고리 or 거리 검색
   // GET      /api/stores/namelist        식당 이름 목록 - UI 자동완성용
   // GET      /api/stores/categorylist    카테고리 목록 - UI용
+  // GET      /api/stores/storeratinglist    식당과 평균/최대/최소 평점 리스트
 
   storeRouter.get("/stores", store.getAllStore);
   storeRouter.post("/stores", store.addNewStore);
@@ -22,6 +23,7 @@ module.exports = (app) => {
   storeRouter.get("/stores/search", store.searchStore);
   storeRouter.get("/stores/namelist", store.getAllStoreNameList);
   storeRouter.get("/stores/categorylist", store.getAllStoreCategoryList);
+  storeRouter.get("/stores/storeratinglist", store.getAllStoreRatingList);
 
   app.use("/api", storeRouter);
 };

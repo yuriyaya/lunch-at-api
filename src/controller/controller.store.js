@@ -127,3 +127,13 @@ exports.getAllStoreCategoryList = (req, res) => {
     else res.send(data);
   });
 };
+
+exports.getAllStoreRatingList = (req, res) => {
+  Store.getAllStoreRatingList((err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving stores.",
+      });
+    else res.send(data);
+  });
+};
