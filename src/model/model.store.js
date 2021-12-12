@@ -144,7 +144,7 @@ Store.searchStore = (keyword, result) => {
 
 Store.getAllStoreNameList = (result) => {
   dbPool.query(
-    "SELECT DISTINCT name from stores ORDER BY name ASC",
+    "SELECT DISTINCT id, name from stores ORDER BY name ASC",
     (err, res) => {
       if (err) {
         utilFunc.printLog("error: " + err);
