@@ -148,7 +148,7 @@ Menu.getAllMenuStore = (result) => {
 
 Menu.getAllMenuRatingList = (result) => {
   dbPool.query(
-    `SELECT mr.id, mr.store_id, mr.name, mr.menu_id, mr.avg_rate, mr.max_rate, mr.min_rate, mr.rate_cnt, stores.name, stores.category, stores.loc_quick, stores.link, stores.distance FROM (SELECT * FROM menus LEFT JOIN (SELECT menu_ratings.menu_id, AVG(menu_ratings.rating) AS avg_rate, MAX(menu_ratings.rating) AS max_rate, MIN(menu_ratings.rating) AS min_rate, COUNT(menu_ratings.rating) as rate_cnt FROM menu_ratings GROUP BY menu_ratings.menu_id) AS r ON menus.id=r.menu_id) as mr LEFT JOIN stores ON mr.store_id = stores.id`,
+    `SELECT mr.id, mr.store_id, mr.name AS mname, mr.menu_id, mr.avg_rate, mr.max_rate, mr.min_rate, mr.rate_cnt, stores.name, stores.category, stores.loc_quick, stores.link, stores.distance FROM (SELECT * FROM menus LEFT JOIN (SELECT menu_ratings.menu_id, AVG(menu_ratings.rating) AS avg_rate, MAX(menu_ratings.rating) AS max_rate, MIN(menu_ratings.rating) AS min_rate, COUNT(menu_ratings.rating) as rate_cnt FROM menu_ratings GROUP BY menu_ratings.menu_id) AS r ON menus.id=r.menu_id) as mr LEFT JOIN stores ON mr.store_id = stores.id`,
     (err, res) => {
       if (err) {
         utilFunc.printLog("error: " + err);
