@@ -2556,6 +2556,52 @@
                   }
                 ]
               }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "${host}",
+                  "path": "/api/menus/menuratinglist"
+                },
+                "id": "7ae40131-33ad-4697-8be2-250412bd3faf",
+                "name": "400 GET store rating list",
+                "headers": [],
+                "assertions": [
+                  {
+                    "comparison": "Equals",
+                    "subject": "ResponseStatus",
+                    "path": "code",
+                    "value": "200"
+                  },
+                  {
+                    "comparison": "Equals",
+                    "subject": "ResponseBody",
+                    "path": "content",
+                    "value": "[{\"store_id\":1,\"avg_rating\":4},{\"store_id\":2,\"avg_rating\":2}]"
+                  }
+                ]
+              }
             }
           ]
         },
