@@ -129,3 +129,14 @@ exports.getAllMenuRatingList = (req, res) => {
     else res.send(data);
   });
 };
+
+exports.getStoreMenuRatingList = (req, res) => {
+  Menu.getStoreMenuRatingList(req.params.id_store, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving menu-store.",
+      });
+    else res.send(data);
+  });
+};

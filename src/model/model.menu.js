@@ -162,4 +162,20 @@ Menu.getAllMenuRatingList = (result) => {
   );
 };
 
+Menu.getStoreMenuRatingList = (id, result) => {
+  dbPool.query(
+    `SELECT menus.store_id, menus.name, menu_ratings.id, menu_ratings.menu_id, menu_ratings.rating, menu_ratings.comment, menu_ratings.datetime FROM menus RIGHT OUTER JOIN menu_ratings ON menus.id = menu_ratings.menu_id WHERE menus.store_id = ${id} ORDER BY menu_ratings.datetime DESC`,
+    (err, res) => {
+      if (err) {
+        utilFunc.printLog("error: " + err);
+        result(null, err);
+        return;
+      }
+
+      utilFunc.printLog("menus-stores: " + res);
+      result(null, res);
+    }
+  );
+};
+
 module.exports = Menu;
