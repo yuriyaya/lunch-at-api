@@ -36,10 +36,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/stores"
                 },
@@ -83,10 +79,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/stores"
@@ -136,10 +128,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/stores"
                 },
@@ -183,10 +171,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/stores"
@@ -238,10 +222,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store/2"
                 },
@@ -275,10 +255,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/stores"
@@ -334,10 +310,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store/1"
                 },
@@ -391,10 +363,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/store/2"
@@ -456,10 +424,6 @@
                       }
                     ]
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/stores/search"
                 },
@@ -519,10 +483,6 @@
                         "value": "당1"
                       }
                     ]
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/stores/search"
@@ -584,10 +544,6 @@
                       }
                     ]
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/stores/search"
                 },
@@ -648,10 +604,6 @@
                       }
                     ]
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/stores/search"
                 },
@@ -711,10 +663,6 @@
                         "value": "5"
                       }
                     ]
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/stores/search"
@@ -781,10 +729,6 @@
                       }
                     ]
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/stores/search"
                 },
@@ -831,10 +775,6 @@
                         "value": "10"
                       }
                     ]
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/stores/search"
@@ -890,10 +830,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/stores/namelist"
                 },
@@ -941,10 +877,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/stores/categorylist"
@@ -997,10 +929,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store/1/menus"
                 },
@@ -1042,10 +970,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/store/2/menus"
@@ -1090,10 +1014,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/store/1/menus"
@@ -1145,10 +1065,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store/1/menus"
                 },
@@ -1199,10 +1115,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store/2/menus"
                 },
@@ -1251,10 +1163,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu/1"
                 },
@@ -1296,10 +1204,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/menu/3"
@@ -1344,10 +1248,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/menu/2"
@@ -1396,10 +1296,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/menu/2"
@@ -1455,10 +1351,6 @@
                       }
                     ]
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menus/search"
                 },
@@ -1513,10 +1405,6 @@
                       }
                     ]
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menus/search"
                 },
@@ -1558,10 +1446,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/store/1/menulist"
@@ -1605,10 +1489,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menus/menustorelist"
                 },
@@ -1651,12 +1531,8 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
-                  "path": "/api/store/1/menuratinglist"
+                  "path": "/api/store/19/menuratinglist"
                 },
                 "id": "7c0c8f6e-2746-49c2-be24-013c0cb30a57",
                 "name": "440 GET store menu ratings",
@@ -1706,10 +1582,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store/1/store_ratings"
                 },
@@ -1751,10 +1623,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/store/2/store_ratings"
@@ -1799,10 +1667,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/store/1/store_ratings"
@@ -1854,10 +1718,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store/1/store_ratings"
                 },
@@ -1908,10 +1768,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store/2/store_ratings"
                 },
@@ -1959,10 +1815,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/store/1/store_ratings"
@@ -2012,10 +1864,6 @@
                       }
                     ]
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store_ratings/search"
                 },
@@ -2064,10 +1912,6 @@
                       }
                     ]
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store_ratings/search"
                 },
@@ -2109,10 +1953,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/stores/storeratinglist"
@@ -2165,10 +2005,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu/1/menu_ratings"
                 },
@@ -2211,10 +2047,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu/2/menu_ratings"
                 },
@@ -2256,10 +2088,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/menu/3/menu_ratings"
@@ -2304,10 +2132,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/menu/1/menu_ratings"
@@ -2359,10 +2183,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu/1/menu_ratings"
                 },
@@ -2413,10 +2233,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu/2/menu_ratings"
                 },
@@ -2466,10 +2282,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/menu/3/menu_ratings"
@@ -2525,10 +2337,6 @@
                       }
                     ]
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu_ratings/search"
                 },
@@ -2577,10 +2385,6 @@
                       }
                     ]
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu_ratings/search"
                 },
@@ -2622,10 +2426,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/menus/menuratinglist"
@@ -2678,10 +2478,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu/2/menu_ratings"
                 },
@@ -2724,10 +2520,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu_rating/3"
                 },
@@ -2763,10 +2555,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/menu/2/menu_ratings"
@@ -2810,10 +2598,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu_rating/1"
                 },
@@ -2850,10 +2634,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu_rating/2"
                 },
@@ -2889,10 +2669,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/menu_rating/4"
@@ -2935,10 +2711,6 @@
                         "value": "3"
                       }
                     ]
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/menu_ratings/search"
@@ -2991,10 +2763,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store/2/store_ratings"
                 },
@@ -3037,10 +2805,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store_rating/3"
                 },
@@ -3076,10 +2840,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/store/2/store_ratings"
@@ -3123,10 +2883,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store/1/store_ratings"
                 },
@@ -3169,10 +2925,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store_rating/1"
                 },
@@ -3208,10 +2960,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/store/1/store_ratings"
@@ -3255,10 +3003,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store_rating/2"
                 },
@@ -3294,10 +3038,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/store/1/store_ratings"
@@ -3350,10 +3090,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store/1/menus"
                 },
@@ -3396,10 +3132,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu/2"
                 },
@@ -3435,10 +3167,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/store/1/menus"
@@ -3482,10 +3210,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu/1"
                 },
@@ -3521,10 +3245,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/store/1/menus"
@@ -3568,10 +3288,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/menu/3"
                 },
@@ -3607,10 +3323,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/store/2/menus"
@@ -3663,10 +3375,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/stores"
                 },
@@ -3709,10 +3417,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store/2"
                 },
@@ -3748,10 +3452,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/stores"
@@ -3795,10 +3495,6 @@
                     "delimiter": "&",
                     "items": []
                   },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
-                  },
                   "host": "${host}",
                   "path": "/api/store/1"
                 },
@@ -3834,10 +3530,6 @@
                   "query": {
                     "delimiter": "&",
                     "items": []
-                  },
-                  "scheme": {
-                    "name": "http",
-                    "version": "V11"
                   },
                   "host": "${host}",
                   "path": "/api/stores"
