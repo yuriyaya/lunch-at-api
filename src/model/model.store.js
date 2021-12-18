@@ -131,7 +131,7 @@ Store.searchStore = (keyword, result) => {
     ") as s LEFT JOIN (SELECT store_id, AVG(rating) as avg_rating FROM store_ratings GROUP BY store_id) as r ON s.id = r.store_id";
 
   if (keyword["ratings"]) {
-    sql = sql + `WHERE r.avg_rating > ${keyword["ratings"]}`;
+    sql = sql + ` WHERE r.avg_rating > ${keyword["ratings"]}`;
   }
 
   dbPool.query(sql, (err, res) => {
