@@ -834,7 +834,7 @@
                   "path": "/api/stores/namelist"
                 },
                 "id": "6af38b92-981f-4320-9d75-32fd414d59a0",
-                "name": "450 GET all store name list",
+                "name": "500 GET all store name list",
                 "headers": [],
                 "assertions": [
                   {
@@ -882,7 +882,7 @@
                   "path": "/api/stores/categorylist"
                 },
                 "id": "4f24cc00-cb41-4c14-981f-474ce0eed96a",
-                "name": "460 GET all store category list",
+                "name": "510 GET all store category list",
                 "headers": [],
                 "assertions": [
                   {
@@ -1930,6 +1930,76 @@
                     "subject": "ResponseBody",
                     "path": "content",
                     "value": "[{\"store_id\":1,\"avg_rating\":4},{\"store_id\":2,\"avg_rating\":2}]"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": [
+                      {
+                        "enabled": true,
+                        "name": "category",
+                        "value": "일식"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "distance",
+                        "value": "10"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "rating",
+                        "value": "3"
+                      }
+                    ]
+                  },
+                  "host": "${host}",
+                  "path": "/api/stores/search"
+                },
+                "id": "59b16bdc-9cb4-4b7e-8fc5-5c037abe75f6",
+                "name": "320 GET search store",
+                "headers": [],
+                "assertions": [
+                  {
+                    "comparison": "Equals",
+                    "subject": "ResponseStatus",
+                    "path": "code",
+                    "value": "200"
+                  },
+                  {
+                    "comparison": "DoesNotContain",
+                    "subject": "ResponseBody",
+                    "path": "content",
+                    "value": "식당1"
+                  },
+                  {
+                    "comparison": "Contains",
+                    "subject": "ResponseBody",
+                    "path": "content",
+                    "value": "식당3"
+                  },
+                  {
+                    "comparison": "DoesNotContain",
+                    "subject": "ResponseBody",
+                    "path": "content",
+                    "value": "식당2"
                   }
                 ]
               }
