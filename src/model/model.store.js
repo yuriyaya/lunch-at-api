@@ -125,6 +125,11 @@ Store.searchStore = (keyword, result) => {
     }
   }
 
+  sql =
+    "SELECT * FROM (" +
+    sql +
+    ") as s LEFT JOIN (SELECT store_id, AVG(rating) as avg_rating FROM store_ratings GROUP BY store_id) as r ON s.id = r.store_id";
+
   dbPool.query(sql, (err, res) => {
     if (err) {
       utilFunc.printLog("error: " + err);
